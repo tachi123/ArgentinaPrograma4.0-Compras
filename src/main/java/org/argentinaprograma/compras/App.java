@@ -1,5 +1,7 @@
 package org.argentinaprograma.compras;
 
+import java.util.HashSet;
+
 import org.argentinaprograma.compras.exceptions.SinStockException;
 import org.argentinaprograma.compras.models.Carrito;
 import org.argentinaprograma.compras.models.Descuento;
@@ -58,5 +60,19 @@ public class App
 		
 		System.out.println("Costo final del carrito usando descuento porcentaje:"+unCarrito.costoFinal(desc2));
 				
+		
+		HashSet<Producto> lenguajes = new HashSet<Producto>();
+		
+		lenguajes.add(harina);
+		lenguajes.add(leche);
+		lenguajes.add(harina);
+
+		Producto harina1 = new Producto("harina",100.0);
+
+		lenguajes.add(harina1);
+		lenguajes.add(harina1);
+		lenguajes.add(harina1);
+		
+		System.out.println(lenguajes);
     }
 }

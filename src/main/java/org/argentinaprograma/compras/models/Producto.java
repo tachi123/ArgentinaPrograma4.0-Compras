@@ -1,6 +1,7 @@
 package org.argentinaprograma.compras.models;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Producto {
 	
@@ -85,6 +86,26 @@ public class Producto {
 	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre,precio);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj)
+			return true;
+		if(obj == null)
+			return false;
+		if(getClass() != obj.getClass())
+			return false;
+		
+		Producto other = (Producto) obj;
+		if(this.hashCode() != other.hashCode())
+			return false;
+		else
+			return true;
+	}
 	
 }
